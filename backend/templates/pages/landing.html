@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BizAnalystics – Analytics for Everything That Matters{% endblock %}
+
+{% block nav %}
+  <a href="/#about">About Us</a>
+  <a href="/#contact">Contact</a>
+  <a id="nav-login"     href="/login/">Login</a>
+  <a id="nav-register"  href="/login/#register">Register</a>
+  <a id="nav-dashboard" class="hidden" href="/dashboard/">Dashboard</a>
+  <a id="nav-logout"    class="hidden nav-logout-link" href="#">Logout</a>
+{% endblock %}
+
+{% block content %}
+  <!-- Intro overlay -->
+  <div id="intro-overlay">
+    <div class="intro-content">
+      <div class="door-scene">
+        <div class="door left-door"><div class="door-wood-grain"></div></div>
+        <div class="door right-door"><div class="door-wood-grain"></div></div>
+        <div class="person">
+          <div class="person-head"></div>
+          <div class="person-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="hero-section landing-page-section">
+    <div class="hero-text">
+      <h1>Analytics for everything that matters</h1>
+      <p>
+        <strong>BizAnalystics</strong> turns raw data into clear, live visuals so you can
+        understand performance across sales, operations, finance, marketing, supply chain,
+        and more.
+      </p>
+      <a href="/login/" class="primary-btn">Launch Analytics</a>
+    </div>
+    <div class="hero-graphic">
+      <div class="card chart-card">
+        <div class="bar-chart">
+          <div class="bar bar-1"></div>
+          <div class="bar bar-2"></div>
+          <div class="bar bar-3"></div>
+          <div class="bar bar-4"></div>
+          <div class="bar bar-5"></div>
+        </div>
+        <div class="sparkline"></div>
+      </div>
+      <div class="card kpi-card">
+        <div class="kpi-row kpi-up"><span>Revenue</span><span>+18.4%</span></div>
+        <div class="kpi-row kpi-down"><span>Waste</span><span>-5.2%</span></div>
+        <div class="kpi-row kpi-flat"><span>Stock Health</span><span>Balanced</span></div>
+      </div>
+      <div class="card trend-card">
+        <div class="ticker">
+          <div class="ticker-track">
+            <span>FOOD-SALES ▲ 3.4%</span><span>SUPPLY ▲ 1.2%</span>
+            <span>LOSSES ▼ 0.8%</span><span>CUSTOMERS ▲ 4.9%</span>
+            <span>UPTIME ▲ 99.9%</span><span>LEADS ▲ 6.3%</span>
+            <span>FOOD-SALES ▲ 3.4%</span><span>SUPPLY ▲ 1.2%</span>
+            <span>LOSSES ▼ 0.8%</span><span>CUSTOMERS ▲ 4.9%</span>
+            <span>UPTIME ▲ 99.9%</span><span>LEADS ▲ 6.3%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="content-section">
+    <h2>About Us</h2>
+    <p>
+      BizAnalystics is a flexible analytics companion designed to connect smoothly with your
+      Power BI reports and other BI tools. From food sales to finance, operations,
+      marketing, and inventory, we help you see patterns, spot risks, and act faster with
+      always&#8209;on insights.
+    </p>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Business Performance</h3>
+        <p>Track revenue, cost, and profitability across any product, service, or region.</p>
+      </div>
+      <div class="feature">
+        <h3>Operational Efficiency</h3>
+        <p>Spot waste, stock‑outs, bottlenecks, and SLA risks before they become costly.</p>
+      </div>
+      <div class="feature">
+        <h3>Executive Dashboards</h3>
+        <p>Get a high‑level view tailored for leaders, from daily snapshots to long‑term trends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Have questions or need a custom dashboard? Reach out.</p>
+    <form class="contact-form" onsubmit="event.preventDefault();">
+      <div class="form-row">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" type="text" placeholder="Your name" />
+      </div>
+      <div class="form-row">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" type="email" placeholder="you@example.com" />
+      </div>
+      <div class="form-row">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" rows="3" placeholder="How can we help?"></textarea>
+      </div>
+      <button class="primary-btn" type="submit">Send Message</button>
+    </form>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/tokens.js' %}"></script>
+  <script src="{% static 'js/landing.js' %}"></script>
+{% endblock %}

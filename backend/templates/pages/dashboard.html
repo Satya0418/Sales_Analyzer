@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BizAnalystics – Dashboard{% endblock %}
+
+{% block nav %}
+  <a href="/">Home</a>
+  <a href="/dashboard/" class="nav-active">Dashboard</a>
+  <a id="nav-logout" class="nav-logout-link" href="#">Logout</a>
+{% endblock %}
+
+{% block extra_head %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <section class="dashboard-page">
+
+    <!-- Header bar -->
+    <div class="dash-header">
+      <div>
+        <h2>Analytics Dashboard</h2>
+        <p class="helper-text">
+          Signed in as <strong id="dash-user-name"></strong>
+          &mdash; Role: <span id="dash-user-role"></span>
+        </p>
+      </div>
+      <button id="logout-btn" class="logout-btn">Sign Out</button>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="kpi-strip">
+      <div class="kpi-tile">
+        <span class="kpi-label">Total Sales</span>
+        <span class="kpi-value">$1.20M</span>
+      </div>
+      <div class="kpi-tile">
+        <span class="kpi-label">Avg Sales</span>
+        <span class="kpi-value">$141</span>
+      </div>
+      <div class="kpi-tile">
+        <span class="kpi-label">No. of Items</span>
+        <span class="kpi-value">8,523</span>
+      </div>
+      <div class="kpi-tile">
+        <span class="kpi-label">Avg Rating</span>
+        <span class="kpi-value">3.9 &#9733;</span>
+      </div>
+    </div>
+
+    <!-- Chart grid -->
+    <div class="chart-grid">
+      <div class="chart-panel">
+        <h4 class="chart-title">Fat Content</h4>
+        <div class="chart-wrap chart-wrap--sm"><canvas id="chart-fat"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <h4 class="chart-title">Outlet Size</h4>
+        <div class="chart-wrap chart-wrap--sm"><canvas id="chart-size"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <h4 class="chart-title">Outlet Location</h4>
+        <div class="chart-wrap chart-wrap--sm"><canvas id="chart-location"></canvas></div>
+      </div>
+      <div class="chart-panel chart-panel--wide">
+        <h4 class="chart-title">Sales by Item Type</h4>
+        <div class="chart-wrap chart-wrap--md"><canvas id="chart-item-type"></canvas></div>
+      </div>
+      <div class="chart-panel chart-panel--wide">
+        <h4 class="chart-title">Outlet Establishment Year</h4>
+        <div class="chart-wrap chart-wrap--md"><canvas id="chart-estab"></canvas></div>
+      </div>
+      <div class="chart-panel chart-panel--full">
+        <h4 class="chart-title">Fat Content by Outlet Type</h4>
+        <div class="chart-wrap chart-wrap--md"><canvas id="chart-fat-outlet"></canvas></div>
+      </div>
+      <div class="chart-panel chart-panel--full">
+        <h4 class="chart-title">Outlet Type Summary</h4>
+        <div class="outlet-table-wrap">
+          <table class="outlet-table" id="outlet-table"></table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/tokens.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}

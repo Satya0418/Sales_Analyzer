@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}BizAnalystics – Sign In{% endblock %}
+
+{% block nav %}
+  <a href="/">Home</a>
+  <a href="/#about">About Us</a>
+  <a href="/#contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+  <section class="auth-page">
+    <div class="auth-page-inner">
+
+      <!-- Branding blurb -->
+      <div class="auth-brand">
+        <div class="logo-mark auth-logo-mark">BA</div>
+        <h1 class="auth-brand-title">BizAnalystics</h1>
+        <p class="auth-brand-sub">Sign in to access your live analytics dashboard.</p>
+      </div>
+
+      <!-- Tab switcher -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Login</button>
+        <button class="auth-tab"        data-tab="register">Register</button>
+      </div>
+
+      <!-- Login card -->
+      <div class="auth-card" id="tab-login">
+        <form id="login-form" novalidate>
+          <div class="form-row">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" required placeholder="Password" autocomplete="current-password" />
+          </div>
+          <button class="primary-btn full-width" type="submit">Sign In</button>
+          <p id="login-error"   class="error-text"   aria-live="polite"></p>
+          <p id="login-success" class="success-text" aria-live="polite"></p>
+        </form>
+        <p class="auth-switch-hint">
+          No account? <a href="#" class="auth-switch-link" data-switch="register">Create one</a>
+        </p>
+      </div>
+
+      <!-- Register card (hidden by default) -->
+      <div class="auth-card hidden" id="tab-register">
+        <form id="register-form" novalidate>
+          <div class="form-row">
+            <label for="reg-name">Full Name</label>
+            <input id="reg-name" name="full_name" type="text" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="reg-email">Email</label>
+            <input id="reg-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+          <div class="form-row">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" name="password" type="password" placeholder="Create a password" required autocomplete="new-password" />
+          </div>
+          <div class="form-row">
+            <label for="reg-password-confirm">Confirm Password</label>
+            <input id="reg-password-confirm" name="password_confirm" type="password" placeholder="Repeat password" required autocomplete="new-password" />
+          </div>
+          <button class="primary-btn full-width" type="submit">Create Account</button>
+          <p id="register-error"   class="error-text"   aria-live="polite"></p>
+          <p id="register-success" class="success-text" aria-live="polite"></p>
+        </form>
+        <p class="auth-switch-hint">
+          Already have an account? <a href="#" class="auth-switch-link" data-switch="login">Sign in</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/tokens.js' %}"></script>
+  <script src="{% static 'js/auth.js' %}"></script>
+{% endblock %}

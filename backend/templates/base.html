@@ -1,0 +1,36 @@
+﻿{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}BizAnalystics{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo-area">
+      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <span class="logo-mark">BA</span>
+        <span class="logo-text">BizAnalystics</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      {% block nav %}{% endblock %}
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; <span id="year"></span> BizAnalystics. All rights reserved.</p>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

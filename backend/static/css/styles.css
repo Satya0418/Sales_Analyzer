@@ -976,3 +976,133 @@ button:disabled {
   font-weight: 600;
 }
 
+/* ------------------------------------------------------------------ */
+/* Landing page – intro overlay sits inside <main>                     */
+/* ------------------------------------------------------------------ */
+
+.landing-page-section {
+  position: relative;
+}
+
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #020617 0, #020308 45%, #000 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ------------------------------------------------------------------ */
+/* Auth page (login.html)                                              */
+/* ------------------------------------------------------------------ */
+
+.auth-page {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 6vw;
+}
+
+.auth-page-inner {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.auth-brand {
+  text-align: center;
+}
+
+.auth-logo-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  font-size: 1.2rem;
+  margin: 0 auto 14px;
+}
+
+.auth-brand-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+}
+
+.auth-brand-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Tab switcher */
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 4px;
+  width: 100%;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.auth-tab.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255,59,63,0.35);
+}
+
+/* Auth card */
+.auth-card {
+  width: 100%;
+  padding: 24px 24px 20px;
+  border-radius: 20px;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 65%),
+              linear-gradient(to bottom right, rgba(17,24,39,0.98), rgba(15,23,42,0.98));
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.full-width { width: 100%; }
+
+.auth-switch-hint {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-switch-hint a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Active nav link */
+.nav-active {
+  color: var(--text-main) !important;
+}
+
+/* Dashboard page */
+.dashboard-page {
+  padding-top: 8px;
+}
+
+
